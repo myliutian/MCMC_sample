@@ -10,6 +10,10 @@ python exp_multi_process.py \
   --split_file Splits/test_pocket.txt \
   --split test
 
+P-L为官方数据集
+P-L-graphs为第一阶段处理完的图结构数据
+CASTp为CASTp提供的标准口袋
+
 ## 绘制图案
 
 python plot_metric_cdf.py \
