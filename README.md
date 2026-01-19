@@ -1,1 +1,21 @@
-# MCMC_sample
+# 多种采样方案对比
+
+## 测试方法
+
+python exp_multi_process.py \
+  --graph_dir ./data/P-L-graphs \
+  --raw_data_dir ./data/P-L \
+  --castp_zip_dir ./data/CASTp \
+  --sampling mcmc \
+  --split_file Splits/test_pocket.txt \
+  --split test
+
+## 绘制图案
+
+python plot_metric_cdf.py \
+  --metric precision \
+  --scheme MCMC=./results/mcmc_test_results.json \
+  --scheme greedy=./results/greedy_test_results.json \
+  --scheme graph_cut=./results/graph_cut_test_results.json  \
+  --scheme spectral=./results/spectral_test_results.json \
+  --output ./pic/precision_cdf.png
